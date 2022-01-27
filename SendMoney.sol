@@ -17,6 +17,10 @@ contract SendMoney {
         address payable addressToSend = msg.sender;
 
         addressToSend.transfer(address(this).balance);
-
     }
+
+    function withdrawMoneyTo(address payable _to) public{
+        _to.transfer(address(this).balance);
+    }
+
 }
