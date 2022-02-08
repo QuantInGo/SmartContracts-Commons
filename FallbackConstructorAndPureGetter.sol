@@ -40,4 +40,19 @@ contract FunctionsEx{
        (whether or not ether is received). This function is implicitly payable. */
     receive() external payable{
     }
+
+    /* ============================================================================ 
+       View and Pure functions
+       ============================================================================
+    */
+
+    function getOwner() public view returns(address){
+        return owner;
+    }
+
+    // Pure functions cannot interact with storage variables
+    function convertWeiToEther(uint _amountWei) public pure returns(uint){
+        return _amountWei / (1 ether);
+    }
+
 }
