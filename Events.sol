@@ -2,6 +2,11 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
+/* Usage :
+    - Return values from transactions
+    - Externally to trigger functionality
+    - As a cheap data storage
+*/
 contract Events{
     mapping(address => uint) public tokenBalance;
 
@@ -19,7 +24,7 @@ contract Events{
         tokenBalance[_to] += _amount;
 
         emit TokensSent(msg.sender,_to,_amount);
-        
+
         return true;
     }
 
